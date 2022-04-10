@@ -42,19 +42,19 @@ function usd(aNumber) {
 }
 
 function totalVolumeCredits(plays, invoice) {
-    let volumeCredits = 0;
+    let result = 0;
     for (let perf of invoice.performances) {
-        volumeCredits += volumeCreditsFor(plays, perf);
+        result += volumeCreditsFor(plays, perf);
     }
-    return volumeCredits;
+    return result;
 }
 
 function totalAmount(invoice, plays) {
-    let totalAmount = 0;
+    let result = 0;
     for (let perf of invoice.performances) {
-        totalAmount += amountFor(perf, playFor(plays, perf));
+        result += amountFor(perf, playFor(plays, perf));
     }
-    return totalAmount;
+    return result;
 }
 
 function statement(invoice, plays) {
